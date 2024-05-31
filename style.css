@@ -1,0 +1,154 @@
+body{
+    background-color:lightcyan;
+    font-family:Quicksand;
+    overflow:hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+#door{
+    display:table;
+    border-style:solid;
+    border-width: 15px;
+    position:relative;
+    background-color: rgb(192, 149, 92);
+    height: 100vh;
+    width: 22vw;
+    min-width: 250px;
+    padding: 2em 3.5em;
+}
+
+#generate_bttn, .door_decor{
+    position:absolute;
+}
+
+#doorknob{
+    border-style:solid;
+    border-width:8px ;
+    right: 2em;
+    top: 400px;
+    border-radius: 50%;
+    box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.3);
+    width:2em;
+    height:2em;
+    background-color: rgb(246, 184, 69);
+    position:absolute;
+    z-index:3;
+}
+
+.door_decor{
+    border-color:rgba(0, 0, 0, 0.2);
+    border-width: 20px;
+    border-style:ridge;
+    left:0;
+    right:0;
+    margin: 0 30px;
+    height: 20em;
+    background-color: transparent;
+    z-index:1;
+}
+
+
+#bottom{
+    top: 28em;
+}
+
+.left_text, .right_text{
+    z-index: 10;
+    font-weight:500;
+    font-size: 1.35em;
+    margin: 1.25em 1.5em;
+    padding:0;
+    
+
+}
+
+.left_text{
+    clear:right;
+    display:block;
+    width: fit-content;
+    padding:0.25em 0.5em;
+    border-radius: 15px;
+    color:white;
+    background-color: rgb(44, 143, 213);
+}
+
+.right_text{
+    padding:0.25em 0.5em;
+    border-radius: 15px;
+    color:white;
+    background-color: rgb(44, 213, 58);
+}
+
+.right_container{
+    float:right;
+    width:fit-content;
+    text-align: right;
+}
+
+/*
+Creates aniamtion transition for appearing text by using different style properties
+*/
+.visible{
+    transition: all 0.5s;
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.not_visible{
+    transition: opacity 0s;
+    opacity: 0;
+}
+
+.not_visible.right_text{
+    transform: translateX(40px);
+}
+
+.not_visible.left_text{
+    transform: translateX(-40px);
+}
+
+
+h1{
+    margin-bottom: 10vh;
+}
+
+button{
+    transition: background-color 0.2s;
+    border-style:none;
+    cursor: pointer;
+    font-family:Quicksand;
+    font-weight:500;
+    font-size: 1.35em;
+    top: 11vh;
+    padding:0.25em 0.5em;
+    border-radius: 15px;
+    color:white;
+    background-color: rgb(44, 213, 58);
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.5);
+}
+
+button:hover{
+    background-color: rgb(33, 159, 44);
+}
+
+button:active{
+    transform: translateY(2px);
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0);
+}
+
+.not_active{
+    cursor:not-allowed;
+    background-color:grey;
+}
+
+button.not_active:hover{
+    background-color:grey;
+}
+
+button.not_active:active{
+    transform: none;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.5);
+}
